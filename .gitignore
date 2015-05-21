@@ -1,3 +1,7 @@
+#bp update
+public
+node_modules
+
 # Logs
 logs
 *.log
