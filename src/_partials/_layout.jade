@@ -1,0 +1,55 @@
+doctype html
+html(lang="en-US")
+head
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="viewport", content="width=device-width, initial-scale=1")
+block title
+title My App
+link(rel="stylesheet", href="lib/build.css")
+link(rel="stylesheet", href="css/main.css")
+body
+include _header
+
+.container
+block content
+
+.onLoggedOut.hidden
+  h1 Login
+  form
+    input(type="email", placeholder="email", required)
+    input(type="password", placeholder="password", required)
+    input.doRegister(type="button", value="Register")
+    input(type="submit", value="Login")
+    input.doResetPassword(type="button", value="Reset Password")
+.onTempPassword.hidden
+  h1 Change Password
+  form
+    input(type="password", placeholder="Current Password")
+    input(type="password", placeholder="New Password")
+    input(type="submit", value="Change Password")
+.onChangePassword.hidden
+  h1 Change Password
+  form
+    input(type="password", placeholder="Current Password")
+    input(type="password", placeholder="New Password")
+    input(type="submit", value="Change Password")
+    button.doLogout Logout
+.onChangeEmail.hidden
+  h1 Change Email
+  form
+    input(type="email", placeholder="Current Email")
+    input(type="email", placeholder="New Email")
+    input(type="submit", value="Change Email")
+    button.doLogout Logout
+.onLoggedIn
+  h1 Hello
+  form
+    input(type="submit", value="Change Password", class = "passwordChange")
+    input(type="submit", value="Change Email", class = "emailChange")
+    button.doLogout Logout
+
+include _footer
+script(src="https://cdn.firebase.com/js/client/2.2.5/firebase.js")
+script(src="lib/build.js")
+script(src="js/main.js")
